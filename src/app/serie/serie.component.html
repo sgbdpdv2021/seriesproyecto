@@ -1,0 +1,85 @@
+<div *ngIf="serie != undefined">
+	<h1>{{serie.nombre}}</h1>
+
+	<table>
+		<tr>
+			<th colspan="2">¿Desea editar la información de la serie?</th>
+		</tr>
+		<tr>
+			<th>Visualizaciones:</th>
+			<th><input #serieVisualizaciones placeholder="{{serie.visualizaciones}}" /></th>
+		</tr>
+		<tr>
+			<th>Temporadas:</th>
+			<th><input #serieTemporadas placeholder="{{serie.temporadas}}" /></th>
+		</tr>
+		<tr>
+			<th>Episodios por temporada:</th>
+			<th><input #serieEpisodios placeholder="{{serie.episodios}}" /></th>
+		</tr>
+		<tr>
+			<th><button (click)="goBack()">Volver</button></th>
+			<th><button (click)="save(serieVisualizaciones.value, serieTemporadas.value, serieEpisodios.value)">Guardar</button>
+			</th>
+		</tr>
+	</table>
+
+	<br>
+
+	<p>Haga clic en un actor para editarlo.</p>
+
+	<table>
+		<tr>
+			<th colspan="10">Reparto de {{serie.nombre | uppercase}}</th>
+		</tr>
+		<tr>
+			<th> ID Actor </th>
+			<th>Nombre</th>
+			<th>Temporada de primera aparición</th>
+			<th>Minutos de aparición</th>
+			<th>Nota en IMDB</th>
+			<th>Eliminar</th>
+		</tr>
+		<tr *ngFor="let a of serie.actores">
+			<td>{{a.idActor}}</td>
+			<td><a routerLink="/actor/{{a.idActor}}&{{a.serie}}">{{a.nombre}}</a></td>
+			<td>{{a.temporadaAparicion}}</td>
+			<td>{{a.minutosAparicion}}</td>
+			<td>{{a.notaIMDB}}</td>
+			<td><button (click)="delete(a)">X</button></td>
+		</tr>
+	</table>
+
+	<br>
+
+	<table>
+		<tr>
+			<th colspan="3">¿Desea añadir un nuevo actor a {{serie.nombre}}?</th>
+		</tr>
+		<tr>
+			<th class="">IDActor:</th>
+			<th><input #actorIDActor /></th>
+		</tr>
+		<tr>
+			<th class="">Nombre:</th>
+			<th><input #actorNombre /></th>
+		</tr>
+		<tr>
+			<th class="">Temporada de primera aparición:</th>
+			<th><input #actorTemporadaA /></th>
+		</tr>
+		<tr>
+			<th class="">Minutos de aparición:</th>
+			<th><input #actorMinutosA /></th>
+		</tr>
+		<tr>
+			<th class="">Nota en IMDB:</th>
+			<th><input #actorNotaIMDB /></th>
+		</tr>
+		<tr>
+			<th colspan="2"><button
+    (click)="add(actorIDActor.value, actorNombre.value, actorTemporadaA.value, actorMinutosA.value, actorNotaIMDB.value); actorIDActor.value=''; actorNombre.value=''; actorTemporadaA.value=''; actorMinutosA.value=''; actorNotaIMDB.value=''"
+  >
+    Añadir
+  </button></th>
+		</tr>

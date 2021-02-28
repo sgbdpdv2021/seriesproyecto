@@ -1,0 +1,25 @@
+<!-- <div *ngIf="actor != undefined"> -->
+	<h2>Editar Actor {{actor.nombre | uppercase}}</h2>
+	<table>
+		<tr>
+			<th>Nombre:</th>
+			<th><input #actorNombre placeholder="{{actor.nombre}}" /></th>
+		</tr>
+		<tr>
+			<th>Temporada de primera aparición:</th>
+			<th><input #actorTemporadaA placeholder="{{actor.temporadaAparicion}}" /></th>
+		</tr>
+		<tr>
+			<th>Minutos de aparición del actor:</th>
+			<th><input #actorMinutosA placeholder="{{actor.minutosAparicion}}" /></th>
+		</tr>
+		<tr>
+			<th>Nota del actor en IMDB:</th>
+			<th><input #actorNotaIMDB placeholder="{{actor.notaIMDB}}" /></th>
+		</tr>
+		<tr>
+			<th><button (click)="goBack()">Volver</button></th>
+			<th><button (click)="save(actorNombre.value, actorTemporadaA.value, actorMinutosA.value, actorNotaIMDB.value)">Guardar</button>
+			</th>
+		</tr>
+	</table>

@@ -1,0 +1,76 @@
+p,
+h1 {
+  color: white;
+}
+
+table {
+  font-family: verdana;
+  text-align: center;
+}
+
+th.pos {
+  text-align: right;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #f06c5a;
+  color: white;
+}
+
+td {
+  background-color: white;
+}
+
+a {
+  background-color: #f06c5a;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  background-color: red;
+  color: white;
+}
+
+th.anadir {
+  text-align: right;
+}
+
+.anadir {
+  border: 20px;
+  border-collapse: collapse;
+  padding: 0px 10px;
+}
+
+input {
+  background-color: white;
+  border-radius: 8px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  border-color: black;
+  border-width: 2px;
+  border-collapse: separate;
+}
+
+button {
+  background-color: white;
+  font-size: 15px;
+  border-radius: 8px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  border-color: black;
+  border-width: 2px;
+  border-collapse: separate;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+}

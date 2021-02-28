@@ -1,0 +1,59 @@
+<br>
+<p style="color: white">Haga clic en el nombre de una serie para ver sus actores.</p>
+<br>
+<table>
+	<tr>
+		<th>Lugar</th>
+		<th>ID</th>
+		<th>Nombre</th>
+		<th>Visualizaciones</th>
+		<th>Temporadas</th>
+		<th>Episodios/temporada</th>
+		<th>Episodios</th>
+		<th>Nota</th>
+
+	</tr>
+	<tr *ngFor="let serie of series; index as i">
+		<th class="pos">{{i+1}}</th>
+		<td>{{serie.id}}</td>
+		<td><a routerLink="/serie/{{serie.id}}">{{serie.nombre}}</a></td>
+		<td>{{serie.visualizaciones}}</td>
+		<td>{{serie.temporadas}}</td>
+		<td>{{serie.episodios}}</td>
+		<td>{{serie.episodiosTotales}}</td>
+		<td>{{serie.nota | number}}</td>
+	</tr>
+</table>
+<br>
+<table class="anadir">
+	<tr>
+		<th colspan="2" style="text-align:center" class="anadir">¿Desea añadir una nueva serie?</th>
+	</tr>
+	<tr>
+		<th class="anadir">ID:</th>
+		<th class="anadir"><input #serieId /></th>
+	</tr>
+	<tr>
+		<th class="anadir">Nombre:</th>
+		<th class="anadir"><input #serieNombre /></th>
+	</tr>
+	<tr>
+		<th class="anadir">Visualizaciones:</th>
+		<th class="anadir"><input #serieVisualizaciones /></th>
+	</tr>
+	<tr>
+		<th class="anadir">Temporadas:</th>
+		<th class="anadir"><input #serieTemporadas /></th>
+	</tr>
+	<tr>
+		<th class="anadir">Episodios por temporada:</th>
+		<th class="anadir"><input #serieEpisodios /></th>
+	</tr>
+	<tr>
+		<th colspan="2" class="anadir" style="text-align:center"><button
+    (click)="add(serieId.value, serieNombre.value, serieVisualizaciones.value, serieTemporadas.value, serieEpisodios.value); serieId.value=''; serieNombre.value=''; serieVisualizaciones.value=''; serieTemporadas.value=''; serieEpisodios.value=''"
+  >
+    Añadir
+  </button></th>
+	</tr>
+</table>
